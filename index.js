@@ -1,57 +1,29 @@
-// const path = require('path');
-// const fs = require('fs');
+const express = require('express');
+const app = express();
+const path = require('path');
+const exphbs = require('express-handlebars');
+const routerHome = require('./routers/home');
+const routerSignin = require('./routers/signin');
+const routerSignup = require('./routers/signup');
+const routerUser = require('./routers/user');
+const routerError = require('./routers/error');
 
-// const dirUser20 = path.join(__dirname, 'allUsers', '20');
-// const dirUser18 = path.join(__dirname, 'allUsers', '18');
-//
-// fs.readdir(dirUser20, (err, files) => {
-//     if (err) throw new Error(err);
-//     files.map(value => {
-//         fs.rename(path.join(__dirname, 'allUsers', '20', value), path.join(__dirname, 'allUsers', '18', value), err => {
-//             if (err) throw new Error(err);
-//         })
-//     })
-// })
-//
-// fs.readdir(dirUser18, (err, files) => {
-//     if (err) throw new Error(err);
-//
-//     files.map(fileName => {
-//         fs.readFile(path.join(dirUser18,fileName) , (err, data) => {
-//             if (JSON.parse(data).gender == 'male') {
-//                 fs.rename(path.join(__dirname,'allUsers','18',fileName), path.join(__dirname,'allUsers','20',fileName), err => {
-//                     if (err) throw new Error(err);
-//                 })
-//                 return ;
-//             }
-//         })
-//     })
-// })
+const hbs = exphbs.create({
+    defaultLayout: 'main',
+    extname: 'hbs'
+})
 
-// NEXT TASK
-// **********************************************************************
+app.engine('hbs', hbs.engine);
+app.set('view engine', 'hbs');
+app.set('views', 'views');
+app.use(express.urlencoded({extended: true}))
+app.use('/', routerHome);
+app.use('/signin', routerSignin);
+app.use('/signup', routerSignup);
+app.use('/user', routerUser);
+app.use('/error', routerError);
 
-// const sortList = path.join(__dirname + '/zzz');
-//
-// function sortDir(link) {
-//     fs.readdir(link, (err, files) => {
-//         if (err) throw new Error(err);
-//
-//         files.forEach(fileName => {
-//             const pathWithFile = path.join(link, fileName)
-//             fs.stat(pathWithFile, (err1, stats) => {
-//                 if (stats.isDirectory()) {
-//                     return sortDir(pathWithFile)
-//                 }
-//                 const pathSortFile = path.join(__dirname, 'sortedFiles', fileName)
-//                 fs.rename(pathWithFile, pathSortFile,
-//                     err => {
-//                         if (err) throw new Error(err);
-//                     })
-//
-//             })
-//         })
-//     });
-// }
-//
-// sortDir(sortList);
+
+app.listen(4000, ()=>{
+    console.log('Starting developer server...')
+})

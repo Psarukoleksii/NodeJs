@@ -1,4 +1,0 @@
-{
-    "name": "Volodymyr",
-    "gender": "male"
-}
