@@ -1,27 +1,14 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const exphbs = require('express-handlebars');
-const routerHome = require('./routers/home');
-const routerSignin = require('./routers/signin');
-const routerSignup = require('./routers/signup');
-const routerUser = require('./routers/user');
-const routerError = require('./routers/error');
 
-const hbs = exphbs.create({
-    defaultLayout: 'main',
-    extname: 'hbs'
-})
+const apiRouter = require('./routers/api.router');
 
-app.engine('hbs', hbs.engine);
-app.set('view engine', 'hbs');
-app.set('views', 'views');
+app.use(express.json())
+
 app.use(express.urlencoded({extended: true}))
-app.use('/', routerHome);
-app.use('/signin', routerSignin);
-app.use('/signup', routerSignup);
-app.use('/user', routerUser);
-app.use('/error', routerError);
+
+app.use('/', apiRouter);
 
 
 app.listen(4000, ()=>{
