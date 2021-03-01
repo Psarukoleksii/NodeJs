@@ -1,26 +1,26 @@
 const userService = require('../services/user.services');
 const errorCodes = require('../config/codes/error.codes');
 const goodMessages = require('../config/messages/good.messages');
-const goodCodes = require('../config/codes/good.codes')
+const goodCodes = require('../config/codes/good.codes');
 
+const user = require('../dataBase/models/user');
 
 module.exports = {
-    getAllUser: (req, res) => {
+    getAllUser: async (req, res) => {
         try {
-            const users = userService.allUsers();
+            const users = await userService.allUsers();
 
             res.json(users);
         } catch (e) {
             res.status(errorCodes.BAD_REQUEST).json(e.message);
         }
-
     },
 
-    getUserById: (req, res) => {
+    getUserById: async (req, res) => {
         try {
-            const {userID} = req.params;
+            const {userId} = req.params;
 
-            const user = userService.userById(userID);
+            const user = await userService.userById(userId);
 
             res.json(user);
         } catch (e) {
@@ -28,9 +28,9 @@ module.exports = {
         }
     },
 
-    createUser: (req, res) => {
+    createUser: async (req, res) => {
         try {
-            userService.createUser(req.body);
+            await userService.createUser(req.body);
 
             res.status(goodCodes.CREATED).json(goodMessages.USER_CREATE);
         } catch (e) {

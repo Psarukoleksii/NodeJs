@@ -1,5 +1,5 @@
 const errorMessages = require('../config/messages/error.messages');
-const DB = require('../dataBase/user.data');
+// const DB = require('../dataBase/user.data');
 const errorCodes = require('../config/codes/error.codes');
 
 module.exports = {
@@ -7,7 +7,7 @@ module.exports = {
         try {
             const userId = +req.params.userId;
 
-            if (userId < 0 || !Number.isInteger(userId) || Number.isNaN(userId) || userId > DB.length) {
+            if (userId < 0 || !Number.isInteger(userId) || Number.isNaN(userId)) {
                 throw new Error(errorMessages.ID_IS_NOT_VALID);
             }
 

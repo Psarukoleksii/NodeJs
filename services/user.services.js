@@ -1,19 +1,12 @@
-const DB = require('../dataBase/user.data')
+const User = require('../dataBase/models/user');
 
 module.exports = {
-    allUsers: ()=>{
-        return DB
-    },
+    allUsers: () => User.find(),
 
-    userById: (userId) =>{
-        return DB[userId]
-    },
+    userById: (userId) => User.findById(userId),
 
-    createUser: (objUser) => {
-        DB.push(objUser)
-    },
+    createUser: (objUser) => User.create(objUser),
 
-    deleteUser: (userId) =>{
-        DB.splice(userId, 1);
-    }
+    deleteUser: (userId) => User.deleteOne({_id: userId})
 }
+

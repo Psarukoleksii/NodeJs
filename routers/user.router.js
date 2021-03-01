@@ -4,13 +4,12 @@ const router = Router();
 const userController = require('../controllers/user.controller');
 const userMiddleware = require('../middleware/user.middleware')
 
-router.get('/', userMiddleware.isUsers, userController.getAllUser);
+router.get('/', userController.getAllUser);
 
-router.get(`/:userId`, userMiddleware.isValidIdUser, userController.getUserById);
+router.get(`/:userId`, userController.getUserById);
 
-router.post('/', userMiddleware.isObjectUser, userController.createUser);
+router.post('/', userController.createUser);
 
-router.delete('/:userId', userMiddleware.isValidIdUser, userController.deleteUser);
-
+router.delete('/:userId', userController.deleteUser);
 
 module.exports = router;
