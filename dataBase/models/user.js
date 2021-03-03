@@ -8,6 +8,8 @@ const carsSubScheme = {
 const userScheme = new Schema({
     name: {type: String, required: true},
     age: {type: Number, default: 15},
+    email: {type: String, required: true},
+    password: {type: String, required: true},
     cars: [carsSubScheme]
 });
 

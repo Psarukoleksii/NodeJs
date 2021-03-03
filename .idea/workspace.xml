@@ -4,13 +4,11 @@
     <list default="true" id="28f1b913-f67b-4762-9b9f-61d1d16e9a39" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataBase/user.data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/models/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/middleware/user.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/user.middleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routers/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/user.router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/user.services.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/user.services.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="homeWork5" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,6 +41,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\nodeOktenWeb\config\regexp" />
+      <recent name="E:\nodeOktenWeb\config" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -53,7 +57,12 @@
       <updated>1614164346886</updated>
       <workItem from="1614164351276" duration="11673000" />
       <workItem from="1614591763488" duration="5491000" />
-      <workItem from="1614605488910" duration="6184000" />
+      <workItem from="1614605488910" duration="6928000" />
+      <workItem from="1614629697300" duration="18000" />
+      <workItem from="1614688890134" duration="2616000" />
+      <workItem from="1614777176329" duration="8046000" />
+      <workItem from="1614788783555" duration="3890000" />
+      <workItem from="1614801124729" duration="5702000" />
     </task>
     <servers />
   </component>
@@ -61,26 +70,38 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1614602237054">
+    <state x="309" y="42" key="#Inspections" timestamp="1614788147825">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="309" y="42" key="#Inspections/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1614788147825" />
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1614788463040">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1024.728@0.0.1366.728" timestamp="1614602237054" />
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1614788463040" />
     <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1614595512068" />
-    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1614602237054">
+    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1614788463038">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1024.728@0.0.1366.728" timestamp="1614602237054" />
+    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1614788463038" />
     <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1614595512067" />
-    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1614602237053">
+    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1614788463021">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1024.728@0.0.1366.728" timestamp="1614602237053" />
+    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1614788463021" />
     <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1614595512066" />
-    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1614602237054">
+    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1614788463039">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1024.728@0.0.1366.728" timestamp="1614602237054" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1614788463039" />
     <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1614595512068" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1614781833280">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1614781833280" />
     <state x="346" y="49" width="670" height="58" key="search.everywhere.popup" timestamp="1614177265325">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
