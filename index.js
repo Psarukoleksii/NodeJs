@@ -13,6 +13,16 @@ app.use(express.urlencoded({extended: true}));
 
 app.use('/', apiRouter);
 
+app.use('*', (err, req, res, next)=>{
+    res
+        .status(err.status)
+        .json({
+            text: err.message,
+            status: err.status,
+            isSuccess: false,
+        })
+})
+
 dotenv.config();
 
 _connectDB();

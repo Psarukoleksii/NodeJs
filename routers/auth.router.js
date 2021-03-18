@@ -1,9 +1,11 @@
-const { Router } = require('express');
+const {Router} = require('express');
 const router = Router();
 
-const { authController } = require('../controllers');
-const { authMiddleware } = require('../middleware');
+const {authController} = require('../controllers');
+const {authMiddleware} = require('../middleware');
 
 router.post('/', authController.authUser);
+
+router.post('/refresh', authMiddleware.checkRefreshTokenMiddleware, authController.refreshToken);
 
 module.exports = router;

@@ -6,17 +6,17 @@ const passwordHasher = require('../helpers');
 
 
 module.exports = {
-    getAllUser: async (req, res) => {
+    getAllUser: async (req, res, next) => {
         try {
             const users = await userService.allUsers();
 
             res.json(users);
         } catch (e) {
-            res.status(errorCodes.BAD_REQUEST).json(e.message);
+            next(e);
         }
     },
 
-    getUserById: async (req, res) => {
+    getUserById: async (req, res, next) => {
         try {
             const {userId} = req.params;
 
@@ -24,11 +24,11 @@ module.exports = {
 
             res.json(user);
         } catch (e) {
-            res.status(errorCodes.BAD_REQUEST).json(e.message);
+            next(e);
         }
     },
 
-    createUser: async (req, res) => {
+    createUser: async (req, res, next) => {
         try {
             const { password } = req.body;
 
@@ -38,11 +38,11 @@ module.exports = {
 
             res.status(goodCodes.CREATED).json(goodMessages.USER_CREATE);
         } catch (e) {
-            return res.status(errorCodes.BAD_REQUEST).json(e.message);
+            next(e);
         }
     },
 
-    deleteUser: async (req, res) => {
+    deleteUser: async (req, res, next) => {
         try {
             const {userId} = req.params;
 
@@ -50,7 +50,7 @@ module.exports = {
 
             res.status(goodCodes.OK).json(goodMessages.USER_DELETE);
         } catch (e) {
-            res.status(errorCodes.BAD_REQUEST).json(e.message);
+            next(e);
         }
     }
 };

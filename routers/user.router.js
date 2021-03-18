@@ -7,9 +7,11 @@ const { authMiddleware } = require('../middleware');
 
 router.get('/', userController.getAllUser);
 
-router.get(`/:userId`, userController.getUserById);
-
 router.post('/', userMiddleware.isObjectUser, userController.createUser);
+
+router.use('/:userId', userMiddleware.isValidId);
+
+router.get(`/:userId`, userController.getUserById);
 
 router.delete('/:userId',authMiddleware.checkAccessTokenMiddleware, userController.deleteUser);
 

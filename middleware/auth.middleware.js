@@ -1,31 +1,61 @@
 const jwt = require('jsonwebtoken');
-const O_Auth = require('../dataBase/models/O_Auth');
-const { constants, messages } = require('../config');
+const {constants, messages, errorHand, codes} = require('../config');
+const {authService} = require('../services');
 
 module.exports = {
     checkAccessTokenMiddleware: async (req, res, next) => {
-        try{
+        try {
             const access_token = req.get(constants.AUTHORIZATION);
 
-            if(!access_token){
-                throw new Error(messages.errorMessages.TOKEN_IS_REQUIRED);
+            if (!access_token) {
+                throw new errorHand.errorHandler(codes.errorCodes.BAD_REQUEST, messages.errorMessages.TOKEN_IS_REQUIRED);
             }
 
-            jwt.verify(access_token, constants.JWT_ACCESS_SECRET, err=> {
-                if(err) {
-                    throw new Error(messages.errorMessages.TOKEN_IS_NOT_VALID);
+            jwt.verify(access_token, constants.JWT_ACCESS_SECRET, err => {
+                if (err) {
+                    throw new errorHand.errorHandler(codes.errorCodes.BAD_REQUEST, messages.errorMessages.TOKEN_IS_NOT_VALID);
                 }
-            }); // перевіряє чи токен валідний за рахунок його строку життя
+            }); // token valid?
 
-            const tokens = await O_Auth.findOne({access_token}).populate('_user_id');
+            const tokens = await authService.findAccessToken(access_token);
 
-            if(!tokens){
-                throw new Error(messages.errorMessages.TOKEN_IS_NOT_VALID);
+            if (!tokens) {
+                throw new errorHand.errorHandler(codes.errorCodes.BAD_REQUEST, messages.errorMessages.TOKEN_IS_NOT_VALID);
             }
 
             next();
         } catch (e) {
-            res.json(e.message);
+            next(e);
         }
-    }
+    },
+
+    checkRefreshTokenMiddleware: async (req, res, next) => {
+        try {
+            const refresh_token = req.get(constants.AUTHORIZATION);
+
+            if (!refresh_token) {
+                throw new errorHand.errorHandler(codes.errorCodes.BAD_REQUEST, messages.errorMessages.TOKEN_IS_REQUIRED);
+            }
+
+            jwt.verify(refresh_token, constants.JWT_REFRESH_SECRET, err => {
+                if (err) {
+                    throw new errorHand.errorHandler(codes.errorCodes.BAD_REQUEST, messages.errorMessages.TOKEN_IS_NOT_VALID);
+                }
+            }); // token valid?
+
+            const tokens = await authService.findRefreshToken(refresh_token);
+
+            if (!tokens) {
+                throw new errorHand.errorHandler(codes.errorCodes.BAD_REQUEST, messages.errorMessages.TOKEN_IS_NOT_VALID);
+            }
+
+            req.tokenInfo = tokens;
+
+            next();
+        } catch (e) {
+            next(e);
+        }
+    },
+
+
 }
