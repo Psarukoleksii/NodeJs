@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const { messages } = require('../config');
 
 module.exports = {
     hash: (password) => bcrypt.hash(password, 10),
@@ -6,7 +7,7 @@ module.exports = {
         const isPasswordEquals = await bcrypt.compare(password, hashPassword);
 
         if (!isPasswordEquals) {
-            throw new Error('Wrong password or email');
+            throw new Error(messages.errorMessages.WRONG_PASSWORD_OR_EMAIL);
         }
     }
 };

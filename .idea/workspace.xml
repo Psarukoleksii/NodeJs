@@ -3,11 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="28f1b913-f67b-4762-9b9f-61d1d16e9a39" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataBase/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/messages/error.messages.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/messages/error.messages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/password.helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/password.helper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/middleware/user.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/user.middleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/api.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/api.router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routers/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/user.router.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="homeWork5" />
+        <entry key="$PROJECT_DIR$" value="homeWork4" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -62,7 +66,12 @@
       <workItem from="1614688890134" duration="2616000" />
       <workItem from="1614777176329" duration="8046000" />
       <workItem from="1614788783555" duration="3890000" />
-      <workItem from="1614801124729" duration="5702000" />
+      <workItem from="1614801124729" duration="6434000" />
+      <workItem from="1614847880952" duration="463000" />
+      <workItem from="1615756339697" duration="307000" />
+      <workItem from="1615756686994" duration="4295000" />
+      <workItem from="1615800004085" duration="12660000" />
+      <workItem from="1616062831487" duration="4384000" />
     </task>
     <servers />
   </component>

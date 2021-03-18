@@ -1,3 +1,5 @@
 module.exports = {
-    reg: require('./regexp')
+    reg: require('./regexp'),
+    constants: require('./constants'),
+    messages: require('./messages'),
 }

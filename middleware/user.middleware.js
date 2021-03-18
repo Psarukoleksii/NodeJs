@@ -1,12 +1,10 @@
-const errorMessages = require('../config/messages/error.messages');
 const errorCodes = require('../config/codes/error.codes');
 const { userValidators } = require('../validators')
-
 
 module.exports = {
     isObjectUser: async (req, res, next) => {
         try {
-            const {error} = await userValidators.createUserValidator.validate(req.body);7
+            const {error} = await userValidators.createUserValidator.validate(req.body);
 
             if(error) throw new Error(error.details[0].message);
 
