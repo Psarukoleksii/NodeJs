@@ -1,9 +1,8 @@
-const userService = require('../services/user.services');
-const errorCodes = require('../config/codes/error.codes');
+const { mailerservice, userService } = require('../services');
 const goodMessages = require('../config/messages/good.messages');
 const goodCodes = require('../config/codes/good.codes');
 const passwordHasher = require('../helpers');
-
+const { emailActionsEnum } = require('../config');
 
 module.exports = {
     getAllUser: async (req, res, next) => {
@@ -30,11 +29,13 @@ module.exports = {
 
     createUser: async (req, res, next) => {
         try {
-            const { password } = req.body;
+            const { password, email } = req.body;
 
             const hashPassword = await passwordHasher.passwordHasher.hash(password);
 
             await userService.createUser({...req.body, password: hashPassword});
+
+            await mailerservice.sendMail(email, emailActionsEnum.WELCOME, { userName: email });
 
             res.status(goodCodes.CREATED).json(goodMessages.USER_CREATE);
         } catch (e) {

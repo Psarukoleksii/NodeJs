@@ -3,5 +3,6 @@ module.exports = {
     constants: require('./constants'),
     messages: require('./messages'),
     errorHand: require('./errorHandler'),
-    codes: require('./codes')
+    codes: require('./codes'),
+    emailActionsEnum: require('./emailActions.enum'),
 };
