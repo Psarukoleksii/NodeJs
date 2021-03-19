@@ -6,5 +6,8 @@ module.exports = {
     USER_IS_NOT_FIND: 'User is not find',
     WRONG_PASSWORD_OR_EMAIL: 'Wrong password or email',
     TOKEN_IS_NOT_VALID: 'Token is not valid',
-    TOKEN_IS_REQUIRED: 'Token is required'
+    TOKEN_IS_REQUIRED: 'Token is required',
+    NOT_VALID_FILE: 'Not valid file',
+    SIZE_IS_TOO_BIG: 'File size is too big',
+    MANY_PHOTOS: 'Number of photos more then one!'
 }

@@ -2,12 +2,17 @@ const {Router} = require('express');
 const router = Router();
 
 const userController = require('../controllers/user.controller');
-const userMiddleware = require('../middleware/user.middleware');
-const { authMiddleware } = require('../middleware');
+const { authMiddleware, fileMiddleware, userMiddleware } = require('../middleware');
 
 router.get('/', userController.getAllUser);
 
-router.post('/', userMiddleware.isObjectUser, userController.createUser);
+router.post(
+    '/',
+    fileMiddleware.checkFileMiddleware,
+    fileMiddleware.checkAvatar,
+    userMiddleware.isObjectUser,
+    userController.createUser
+);
 
 router.use('/:userId', userMiddleware.isValidId);
 

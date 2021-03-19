@@ -7,6 +7,8 @@ module.exports = {
 
     createUser: (objUser) => User.create(objUser),
 
+    updateUserById: (userId, updateObject) => User.updateOne({_id: userId}, {$set: updateObject}),
+
     deleteUser: (userId) => User.deleteOne({_id: userId})
 }
 
