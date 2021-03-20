@@ -4,15 +4,9 @@
     <list default="true" id="28f1b913-f67b-4762-9b9f-61d1d16e9a39" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/messages/error.messages.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/messages/error.messages.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataBase/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/user.router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/user.services.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/user.services.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/user/605519a8ab832802d4bf26b6/photos/5820b740-88fb-11eb-bd41-63553da2d907.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +74,8 @@
       <workItem from="1615756686994" duration="4295000" />
       <workItem from="1615800004085" duration="12660000" />
       <workItem from="1616062831487" duration="30725000" />
-      <workItem from="1616176796445" duration="12610000" />
+      <workItem from="1616176796445" duration="13014000" />
+      <workItem from="1616228749311" duration="13779000" />
     </task>
     <servers />
   </component>
@@ -136,14 +131,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1616078934673" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1616179715052">
+    <state x="339" y="162" key="run.anything.popup" timestamp="1616235881092">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1614781833280" />
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1616179715052" />
-    <state x="346" y="49" width="670" height="58" key="search.everywhere.popup" timestamp="1614177265325">
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1616235881092" />
+    <state x="346" y="49" width="672" height="160" key="search.everywhere.popup" timestamp="1616229786895">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="670" height="58" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1614177265325" />
+    <state x="346" y="49" width="672" height="160" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1616229786895" />
   </component>
 </project>

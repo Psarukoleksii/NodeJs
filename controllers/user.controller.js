@@ -33,7 +33,7 @@ module.exports = {
 
     createUser: async (req, res, next) => {
         try {
-            const {body: {password, email}, avatar} = req;
+            const {body: {password, email}, avatar, docs} = req;
 
             const hashPassword = await passwordHasher.passwordHasher.hash(password);
 
@@ -41,17 +41,22 @@ module.exports = {
 
             await mailerservice.sendMail(email, emailActionsEnum.WELCOME, {userName: email});
 
-            if(avatar){
-                const pathWithoutStatic = path.join('user', `${user._id}`, 'photos');
-                const photoDir = path.join(process.cwd(), 'static', pathWithoutStatic);
-                const fileExtension = avatar.name.split('.').pop();
-                const photoName = `${uuid()}.${fileExtension}`;
-                const photoPath = path.join(photoDir, photoName);
+            if (avatar) {
+                const {finalFilePath, uploadPath, fileDir} = fileDirBuilder(avatar, 'photos', user._id)
 
-                await fs.mkdir(photoDir, {recursive: true});
-                await avatar.mv(photoPath);
+                await fs.mkdir(fileDir, {recursive: true});
+                await avatar.mv(finalFilePath);
 
-                await userService.updateUserById(user._id, {avatar: path.join(pathWithoutStatic, photoName)});
+                await userService.updateUserById(user._id, {avatar: uploadPath});
+            }
+
+            if (docs) {
+                const {uploadPath, finalFilePath, fileDir} = fileDirBuilder(...docs, 'documents', user._id);
+
+                await fs.mkdir(fileDir, {recursive: true});
+                await docs.forEach(value=> value.mv(finalFilePath))
+
+                await userService.updateUserById(user._id, {documents: uploadPath});
             }
 
             res.status(goodCodes.CREATED).json(goodMessages.USER_CREATE);
@@ -72,3 +77,16 @@ module.exports = {
         }
     }
 };
+
+
+function fileDirBuilder(fileName, itemType, itemId) {
+    const pathWithoutStatic = path.join('user', `${itemId}`, `${itemType}`);
+    const fileDir = path.join(process.cwd(), 'static', pathWithoutStatic);
+    const fileExtension = fileName.name.split('.').pop();
+    const finalFileName = `${uuid()}.${fileExtension}`;
+    const finalFilePath = path.join(fileDir, finalFileName);
+
+    const uploadPath = path.join(pathWithoutStatic, finalFileName);
+
+    return {finalFilePath, uploadPath, fileDir};
+}

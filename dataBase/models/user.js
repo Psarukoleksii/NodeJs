@@ -11,6 +11,7 @@ const userScheme = new Schema({
     email: {type: String, required: true},
     password: {type: String, required: true, select: false}, // select: false -> request to front without password!!!
     avatar: {type: String},
+    documents: {type: String},
     cars: [carsSubScheme]
 });
 
