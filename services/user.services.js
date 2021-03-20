@@ -9,6 +9,8 @@ module.exports = {
 
     updateUserById: (userId, updateObject) => User.updateOne({_id: userId}, {$set: updateObject}),
 
+    updateUserWithDocs: async (userId, docs) => await User.updateOne({_id: userId}, {documents: docs}),
+
     deleteUser: (userId) => User.deleteOne({_id: userId})
 }
 

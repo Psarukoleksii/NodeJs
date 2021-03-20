@@ -12,7 +12,8 @@ module.exports = {
             const allFiles = Object.values(files);
 
             for (let i = 0; i < allFiles.length; i++) {
-                const {size, mimetype} = allFiles[i]
+                const {size, mimetype} = allFiles[i];
+
 
                 if (constants.PHOTOS_MIMETYPES.includes(mimetype)) {
                     if (constants.PHOTO_MAX_SIZE < size) {
@@ -20,17 +21,20 @@ module.exports = {
                     }
 
                     photos.push(allFiles[i]);
-                } else if (constants.DOCS_MIMETYPES.includes(mimetype)) {
-                    if (constants.FILE_MAX_SIZE < size) {
-                        throw new errorHand.errorHandler(codes.errorCodes.BAD_REQUEST, messages.errorMessages.SIZE_IS_TOO_BIG)
+                } else if (Array.isArray(allFiles[i])) {
+                    for(let elem of allFiles[i]){
+                        const {size, mimetype} = elem;
+                        if(constants.DOCS_MIMETYPES.includes(mimetype)){
+                            if (constants.FILE_MAX_SIZE < size) {
+                                throw new errorHand.errorHandler(codes.errorCodes.BAD_REQUEST, messages.errorMessages.SIZE_IS_TOO_BIG)
+                            }
+                            docs.push(elem);
+                        }
                     }
-
-                    docs.push(allFiles[i]);
                 } else {
                     throw new errorHand.errorHandler(codes.errorCodes.BAD_REQUEST, messages.errorMessages.NOT_VALID_FILE)
                 }
             }
-
             req.docs = docs;
             req.photos = photos;
 

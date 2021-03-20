@@ -10,7 +10,7 @@ module.exports = {
     ROOT_EMAIL_PASSWORD: process.env.ROOT_EMAIL_PASSWORD || 'ROOT EMAIL PASSWORD',
 
     PHOTO_MAX_SIZE: 2 * 1024 * 1024,
-    FILE_MAX_SIZE: 15 * 1024 * 1024,
+    FILE_MAX_SIZE: 25 * 1024 * 1024,
     PHOTOS_MIMETYPES: [
         'image/gif',
         'image/jpeg',

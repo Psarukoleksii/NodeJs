@@ -1,12 +1,11 @@
 const path = require('path');
 const fs = require('fs-extra').promises;
-const uuid = require('uuid').v1;
 
-const {mailerservice, userService} = require('../services');
-const goodMessages = require('../config/messages/good.messages');
-const goodCodes = require('../config/codes/good.codes');
+
+const { mailerservice, userService } = require('../services');
+const { messages, codes, emailActionsEnum } = require('../config');
+const { fileDirBuilder } = require('../helpers');
 const passwordHasher = require('../helpers');
-const {emailActionsEnum} = require('../config');
 
 module.exports = {
     getAllUser: async (req, res, next) => {
@@ -42,7 +41,7 @@ module.exports = {
             await mailerservice.sendMail(email, emailActionsEnum.WELCOME, {userName: email});
 
             if (avatar) {
-                const {finalFilePath, uploadPath, fileDir} = fileDirBuilder(avatar, 'photos', user._id)
+                const {finalFilePath, uploadPath, fileDir} = fileDirBuilder.fileDirBuilder(avatar, 'photos', user._id)
 
                 await fs.mkdir(fileDir, {recursive: true});
                 await avatar.mv(finalFilePath);
@@ -51,15 +50,21 @@ module.exports = {
             }
 
             if (docs) {
-                const {uploadPath, finalFilePath, fileDir} = fileDirBuilder(...docs, 'documents', user._id);
+                const updateDocs = [];
 
-                await fs.mkdir(fileDir, {recursive: true});
-                await docs.forEach(value=> value.mv(finalFilePath))
+                await (async function () {
+                    for await (let doc of docs) {
+                        const {uploadPath, finalFilePath, fileDir} = fileDirBuilder.fileDirBuilder(doc, 'documents', user._id);
 
-                await userService.updateUserById(user._id, {documents: uploadPath});
+                        await fs.mkdir(fileDir, {recursive: true});
+                        await doc.mv(finalFilePath);
+                        updateDocs.push({path: uploadPath})
+                    }
+                    await userService.updateUserWithDocs(user._id, updateDocs);
+                })();
             }
 
-            res.status(goodCodes.CREATED).json(goodMessages.USER_CREATE);
+            res.status(codes.goodCodes.CREATED).json(messages.goodMessages.USER_CREATE);
         } catch (e) {
             next(e);
         }
@@ -71,7 +76,7 @@ module.exports = {
 
             await userService.deleteUser(userId);
 
-            res.status(goodCodes.OK).json(goodMessages.USER_DELETE);
+            res.status(codes.goodCodes.OK).json(messages.goodMessages.USER_DELETE);
         } catch (e) {
             next(e);
         }
@@ -79,14 +84,4 @@ module.exports = {
 };
 
 
-function fileDirBuilder(fileName, itemType, itemId) {
-    const pathWithoutStatic = path.join('user', `${itemId}`, `${itemType}`);
-    const fileDir = path.join(process.cwd(), 'static', pathWithoutStatic);
-    const fileExtension = fileName.name.split('.').pop();
-    const finalFileName = `${uuid()}.${fileExtension}`;
-    const finalFilePath = path.join(fileDir, finalFileName);
 
-    const uploadPath = path.join(pathWithoutStatic, finalFileName);
-
-    return {finalFilePath, uploadPath, fileDir};
-}
