@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="28f1b913-f67b-4762-9b9f-61d1d16e9a39" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/constants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataBase/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/file.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/file.middleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/user.services.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/user.services.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/user/6055f7351689100044975746/documents/66384df0-897f-11eb-a608-e386d1b49c7e.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/user/6055f7351689100044975746/photos/66331dd0-897f-11eb-a608-e386d1b49c7e.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +31,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ovPyU84AhkoMQJbc656GnxLMi1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -80,6 +75,8 @@
       <workItem from="1616062831487" duration="30725000" />
       <workItem from="1616176796445" duration="13014000" />
       <workItem from="1616228749311" duration="26999000" />
+      <workItem from="1616261541667" duration="777000" />
+      <workItem from="1616435814946" duration="9625000" />
     </task>
     <servers />
   </component>

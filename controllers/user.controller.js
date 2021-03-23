@@ -10,7 +10,9 @@ const passwordHasher = require('../helpers');
 module.exports = {
     getAllUser: async (req, res, next) => {
         try {
-            const users = await userService.allUsers();
+            const getQuery = req.query;
+
+            const users = await userService.filterUsers(getQuery);
 
             res.json(users);
         } catch (e) {
