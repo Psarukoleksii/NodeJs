@@ -61,6 +61,8 @@ module.exports = {
 
     updateUserWithDocs: async (userId, docs) => await User.updateOne({_id: userId}, {documents: docs}),
 
-    deleteUser: (userId) => User.deleteOne({_id: userId})
+    deleteUser: (userId) => User.deleteOne({_id: userId}),
+
+    findEmail: (email) => User.find({email: `${email}`}),
 }
 

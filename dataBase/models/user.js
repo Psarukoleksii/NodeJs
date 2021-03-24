@@ -14,8 +14,9 @@ const userScheme = new Schema({
     name: {type: String, required: true},
     age: {type: Number, default: 20},
     email: {type: String, required: true},
-    password: {type: String, required: true, select: false}, // select: false -> request to front without password!!!
+    password: {type: String, required: true}, // select: false -> request to front without password!!!
     avatar: {type: String},
+    role: {type: String, default: 'user'},
     documents: [docsSubScheme],
     cars: [carsSubScheme]
 });

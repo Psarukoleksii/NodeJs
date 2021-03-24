@@ -3,8 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="28f1b913-f67b-4762-9b9f-61d1d16e9a39" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/codes/error.codes.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/codes/error.codes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/messages/error.messages.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/messages/error.messages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/auth.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/user.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/user.middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/user.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth.services.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth.services.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/user.services.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/user.services.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validators/user/create-user.validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/user/create-user.validator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validators/user/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/user/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +90,8 @@
       <workItem from="1616176796445" duration="13014000" />
       <workItem from="1616228749311" duration="26999000" />
       <workItem from="1616261541667" duration="777000" />
-      <workItem from="1616435814946" duration="9625000" />
+      <workItem from="1616435814946" duration="10482000" />
+      <workItem from="1616490088714" duration="27033000" />
     </task>
     <servers />
   </component>
@@ -128,10 +143,10 @@
     <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1024.728@0.0.1366.728" timestamp="1614602237054" />
     <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1614788463039" />
     <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1614595512068" />
-    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1616078934673">
+    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1616511554544">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1616078934673" />
+    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1616511554544" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1616251975760">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

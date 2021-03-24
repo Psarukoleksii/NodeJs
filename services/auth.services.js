@@ -7,4 +7,4 @@ module.exports = {
     findAccessToken: (access_token) => O_Auth.findOne({access_token}).populate('_user_id'),
 
     findRefreshToken: (refresh_token) => O_Auth.findOne({refresh_token})
-}
+};

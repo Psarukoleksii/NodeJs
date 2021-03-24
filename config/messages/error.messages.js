@@ -9,5 +9,7 @@ module.exports = {
     TOKEN_IS_REQUIRED: 'Token is required',
     NOT_VALID_FILE: 'Not valid file',
     SIZE_IS_TOO_BIG: 'File size is too big',
-    MANY_PHOTOS: 'Number of photos more then one!'
+    MANY_PHOTOS: 'Number of photos more then one!',
+    FORBIDDEN: 'Forbidden',
+    EMAIL_IS_USED: 'Email is already used by another user',
 }

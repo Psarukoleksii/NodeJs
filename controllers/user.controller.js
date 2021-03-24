@@ -26,7 +26,10 @@ module.exports = {
 
             const user = await userService.userById(userId);
 
-            res.json(user);
+            res.json({
+                response: codes.goodCodes.OK,
+                data: user,
+            });
         } catch (e) {
             next(e);
         }
@@ -78,7 +81,18 @@ module.exports = {
 
             await userService.deleteUser(userId);
 
-            res.status(codes.goodCodes.OK).json(messages.goodMessages.USER_DELETE);
+            res.status(codes.goodCodes.OK).json(messages.goodMessages.USER_DELETE + `with id ${userId}`);
+        } catch (e) {
+            next(e);
+        }
+    },
+
+    updateUser: async (req, res, next) => {
+        try {
+            const user = req.body;
+
+
+
         } catch (e) {
             next(e);
         }

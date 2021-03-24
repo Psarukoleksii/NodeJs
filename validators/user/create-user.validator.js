@@ -18,6 +18,7 @@ module.exports = Joi.object({
         .regex(NAME_REGEXP),
     age: Joi.number().max(120),
     email: Joi.string().regex(EMAIL_REGEXP).required(),
+    role: Joi.string(),
     password: Joi.string().regex(PASSWORD_REGEXP).required(),
     cars: carsSubScheme
 });

@@ -5,6 +5,7 @@ const fileUpload = require('express-fileupload');
 
 const apiRouter = require('./routers/api.router');
 const { constants } = require('./config');
+const cronRun = require('./cron-jobs');
 
 const app = express();
 
@@ -32,6 +33,7 @@ _connectDB();
 
 app.listen(constants.PORT, () => {
     console.log('Starting developer server...');
+    cronRun();
 })
 
 function _connectDB() {
