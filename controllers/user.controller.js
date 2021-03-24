@@ -40,7 +40,6 @@ module.exports = {
             const {body: {password, email}, avatar, docs} = req;
 
             const hashPassword = await passwordHasher.passwordHasher.hash(password);
-
             const user = await userService.createUser({...req.body, password: hashPassword});
 
             await mailerservice.sendMail(email, emailActionsEnum.WELCOME, {userName: email});
@@ -50,7 +49,6 @@ module.exports = {
 
                 await fs.mkdir(fileDir, {recursive: true});
                 await avatar.mv(finalFilePath);
-
                 await userService.updateUserById(user._id, {avatar: uploadPath});
             }
 
@@ -89,10 +87,12 @@ module.exports = {
 
     updateUser: async (req, res, next) => {
         try {
-            const user = req.body;
+            const { userId } = req.params;
+            const { user } = req;
 
+            await userService.updateUserById(userId, user);
 
-
+            res.json('okey');
         } catch (e) {
             next(e);
         }

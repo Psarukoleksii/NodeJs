@@ -6,10 +6,9 @@ const { authMiddleware, fileMiddleware, userMiddleware, isAdminMiddleware } = re
 
 router.get('/', userController.getAllUser);
 
-router.post(
-    '/',
-    fileMiddleware.checkFileMiddleware,
-    fileMiddleware.checkAvatar,
+router.post( '/',
+  // fileMiddleware.checkFileMiddleware,
+  //   fileMiddleware.checkAvatar,
     userMiddleware.isObjectUser,
     isAdminMiddleware.checkRole(['admin']),
     userMiddleware.mailIsFree,
@@ -20,7 +19,12 @@ router.use('/:userId', userMiddleware.isValidId);
 
 router.get(`/:userId`, userController.getUserById);
 
-router.put('/:userid', authMiddleware.checkAccessTokenMiddleware, userController)
+router.put(
+  '/:userId',
+  authMiddleware.checkAccessTokenMiddleware,
+  userMiddleware.updateAccount,
+  userController.updateUser
+);
 
 router.delete('/:userId',authMiddleware.checkAccessTokenMiddleware, userController.deleteUser);
 

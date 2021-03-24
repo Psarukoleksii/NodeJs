@@ -12,4 +12,5 @@ module.exports = {
     MANY_PHOTOS: 'Number of photos more then one!',
     FORBIDDEN: 'Forbidden',
     EMAIL_IS_USED: 'Email is already used by another user',
+    USER_NOT_VALID: 'User not valid'
 }

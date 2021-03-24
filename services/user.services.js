@@ -64,5 +64,6 @@ module.exports = {
     deleteUser: (userId) => User.deleteOne({_id: userId}),
 
     findEmail: (email) => User.find({email: `${email}`}),
+
 }
 

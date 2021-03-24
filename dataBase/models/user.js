@@ -5,10 +5,10 @@ const carsSubScheme = {
     price: {type: Number}
 };
 
-const docsSubScheme = {
-    name: {type: String, required: true, default: 'Document1'},
-    path: {type: String, required: true},
-}
+// const docsSubScheme = {
+//     name: {type: String, default: 'Document1'},
+//     path: {type: String},
+// }
 
 const userScheme = new Schema({
     name: {type: String, required: true},
@@ -17,7 +17,7 @@ const userScheme = new Schema({
     password: {type: String, required: true}, // select: false -> request to front without password!!!
     avatar: {type: String},
     role: {type: String, default: 'user'},
-    documents: [docsSubScheme],
+    // documents: [docsSubScheme],
     cars: [carsSubScheme]
 });
 
